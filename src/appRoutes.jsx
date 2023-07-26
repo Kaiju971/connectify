@@ -1,22 +1,18 @@
+import { Routes, Route } from "react-router-dom";
+import Accueil from "./pages/Accueil";
+import Connexion from "./pages/Connexion";
+import Inscription from "./pages/inscription";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/layout";
-import Accueil from "./pages/accueil";
-// import Blogs from "./pages/Blogs";
-import Contact from "./pages/contact";
-// import NoPage from "./pages/NoPage";
+import NoPage from "./pages/noPage";
 
 export default function AppRoutes() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Accueil />} />
-          {/* <Route path="blogs" element={<Blogs />} /> */}
-          <Route path="contact" element={<Contact />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Accueil />} />
+      <Route path="/accueil" element={<Accueil />} />
+      <Route path="/connexion" element={<Connexion />} />
+      <Route path="/inscription" element={<Inscription />} />
+      <Route path="*" element={<NoPage />} />
+    </Routes>
   );
 }

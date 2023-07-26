@@ -2,8 +2,9 @@ import React from "react";
 import * as S from "./profil.styled";
 
 export default function profil() {
-  return( 
-        <div>connexion</div>
-
-  )
+  return (
+    <S.Container>
+      <div>profil</div>
+    </S.Container>
+  );
 }

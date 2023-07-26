@@ -3,16 +3,15 @@
 // import React from "react";
 import * as S from "./app.styled";
 import AppRoutes from "./appRoutes";
-import Layout from "./pages/layout";
+import Topbar from "./pages/Topbar";
 
-function App() {
+function app() {
   return (
     <S.Container>
-      <AppRoutes>
-        <Layout />
-      </AppRoutes>
+      <Topbar />
+      <AppRoutes />
     </S.Container>
   );
 }
 
-export default App;
+export default app;

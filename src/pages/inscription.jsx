@@ -4,6 +4,6 @@ import * as S from "./inscription.styled";
 export default function inscription() {
   return (
    
-    <div>connexion</div>
+    <div>inscription</div>
   )
 }

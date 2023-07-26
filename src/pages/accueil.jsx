@@ -1,10 +1,15 @@
 import React from "react";
-import * as S from "./accueil.styled";
+import * as S from "./Accueil.styled";
+import fd_accueil from "../movie/fd_accueil.mp4";
 
-export default function accueil() {
+console.log(fd_accueil);
+
+export default function Accueil() {
   return (
     <S.Container>
-      <div>accueil</div>
+      <div>
+        Connectify <img scr={fd_accueil} className="movie" alt="" />
+      </div>
     </S.Container>
   );
 }
