@@ -15,6 +15,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router";
 
+
 const drawerWidth = 240;
 const navItems = ["Accueil", "Connexion", "Inscription"];
 
@@ -29,7 +30,7 @@ export default function DrawerAppBar() {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Connectify
+        {/* Connectify */}
       </Typography>
       <Divider />
       <List>
@@ -47,7 +48,10 @@ export default function DrawerAppBar() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar 
+      component="nav" 
+      sx={{ backgroundColor: "transparent" }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -100,3 +104,4 @@ export default function DrawerAppBar() {
     </Box>
   );
 }
+

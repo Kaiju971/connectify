@@ -1,15 +1,19 @@
 import React from "react";
 import * as S from "./Accueil.styled";
-import fd_accueil from "../movie/fd_accueil.mp4";
+import fdaccueil from "../movie/fdaccueil.mp4";
 
-console.log(fd_accueil);
-
-export default function Accueil() {
+const Accueil = () =>{
   return (
     <S.Container>
-      <div>
-        Connectify <img scr={fd_accueil} className="movie" alt="" />
+      <div className="Accueil">
+        <video src={fdaccueil} autoPlay loop muted />
+        <div className="content">
+          <h1>Connectify</h1>
+        </div>
       </div>
     </S.Container>
   );
 }
+
+export default Accueil;
+
