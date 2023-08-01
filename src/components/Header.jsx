@@ -15,7 +15,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router";
 
-import * as S from './Topbar.styled';
+import * as S from "./Header.styled";
 
 const drawerWidth = 240;
 const navItems = ["Accueil", "Connexion", "Inscription"];
@@ -29,27 +29,25 @@ export default function DrawerAppBar() {
   };
 
   const drawer = (
-   
-      <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-        <Typography variant="h6" sx={{ my: 2 }}>
-          Connectify
-        </Typography>
-        <Divider />
-        <List>
-          {navItems.map((item) => (
-            <ListItem key={item} >
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item} onClick={() => navigate(item)} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Box>
-   
-  ); 
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        Connectify
+      </Typography>
+      <Divider />
+      <List>
+        {navItems.map((item) => (
+          <ListItem key={item}>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={item} onClick={() => navigate(item)} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
   return (
-    <S.Container >
-      <Box  sx={{ display: "flex" }}>
+    <S.Container>
+      <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar
           component="nav"

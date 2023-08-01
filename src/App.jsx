@@ -3,17 +3,17 @@
 // import React from "react";
 // import * as S from "./app.styled";
 import AppRoutes from "./appRoutes";
-import Topbar from "./pages/Topbar";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
-function app() {
+function App() {
   return (
     <>
-     <Topbar />
+      <Header />
       <AppRoutes />
-      
+      <Footer />
     </>
-     
-  )
+  );
 }
 
-export default app;
+export default App;
