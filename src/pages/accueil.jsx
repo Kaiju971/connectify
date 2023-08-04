@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./Accueil.styled";
 import fdaccueil from "../movie/fdaccueil.mp4";
 import fdactualite from "../image/fdactualite.jpg";
@@ -18,21 +18,27 @@ const Accueil = () => {
     es: "Bienvenido",
     de: "Willkommen",
     uk: "Ласкаво просимо",
-    an: "Bel Bonjou",
+    jap: "ようこそ",
   };
 
-  function changeLanguage() {
-    const welcomeText = document.getElementById("welcome-text");
-    const currentLanguage = welcomeText.getAttribute("data-lang");
-    const languages = Object.keys(translations);
-    let nextIndex = (languages.indexOf(currentLanguage) + 1) % languages.length;
-    const nextLanguage = languages[nextIndex];
-    console.log(nextLanguage);
+  useEffect(() => {
+    function changeLanguage() {
+      const welcomeText = document.getElementById("welcome-text");
+      const currentLanguage = welcomeText.getAttribute("data-lang");
+      const languages = Object.keys(translations);
+      let nextIndex =
+        (languages.indexOf(currentLanguage) + 1) % languages.length;
+      const nextLanguage = languages[nextIndex];
+      console.log(nextLanguage);
 
-    welcomeText.textContent = translations[nextLanguage];
-    welcomeText.setAttribute("data-lang", nextLanguage);
-  }
-  setInterval(changeLanguage, 1500);
+      welcomeText.textContent = translations[nextLanguage];
+      welcomeText.setAttribute("data-lang", nextLanguage);
+    }
+    const intervalId = setInterval(changeLanguage, 1000);
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
   return (
     <S.Container>
@@ -181,112 +187,6 @@ const Accueil = () => {
         </S.FormInscr>
       </S.Cell12>
 
-      {/* <Box sx={{ width: "100%" }}>
-        <Grid container rowSpacing={0} columnSpacing={0}>
-          <Grid xs={12}>
-            <S.Item>
-              <div className="gridItem">
-                <Typography
-                  variant="h1"
-                  fontFamily="Gravitas One', cursive"
-                  sx={{ my: 2 }}
-                  className="cell1"
-                >
-                  Bienvenue
-                </Typography>
-                <video src={fdaccueil} className="cell2" />
-              </div>
-            </S.Item>
-          </Grid>
-          <Grid sm={6}>
-            <S.Item className="cell3">
-              <S.Img3 />
-            </S.Item>
-          </Grid>
-          <Grid xs={6} sx={{ backgroundColor: "#20835d" }} className="cell4">
-            <S.Item>
-              <Typography
-                variant="h2"
-                sx={{
-                  my: 2,
-                  textAlign: "center",
-                  fontFamily: "Gravitas One', cursive",
-                }}
-              >
-                Actualité
-              </Typography>
-              <Typography
-                variant="body1"
-                fontFamily="Gravitas One', cursive"
-                sx={{ my: 2, px: 6 }}
-              >
-                <p>Le lieu où vous pouvez vous connecter</p>
-                <p> avec vos amis, partager des moments</p>
-                <p>spéciaux et explorer de nouvelles</p>
-                <p>rencontres.</p>
-                <p>Exprimez-vous à travers des</p>
-                <p> photos, des vidéos et des messages, et découvrez le</p>
-                <p>monde passionnant de la communauté </p>
-                <p>Connectify.</p>
-                <p>Rejoignez-nous dès maintenant et</p>
-                <p>commencez à créer des liens, à inspirer</p>
-                <p> et à être inspiré. Connectify est là pour</p>
-                <p> vous aider à rester connecté et à</p>
-                <p>célébrer les moments de la vie,</p>
-                <p> ensemble.</p>
-              </Typography>
-            </S.Item>
-          </Grid>
-          <Grid xs={6} sx={{ backgroundColor: " #1D5A43" }} className="cell5">
-            <S.Item>
-              <Typography
-                variant="h2"
-                sx={{
-                  my: 10.44,
-                  textAlign: "center",
-                  fontFamily: "Gravitas One', cursive",
-                }}
-              >
-                Qui sommes nous?
-              </Typography>
-              <Typography
-                variant="body1"
-                fontFamily="Gravitas One', cursive"
-                sx={{ my: 2 }}
-              >
-                Chez Connectify, nous sommes <br /> une plateforme sociale
-                <br /> dynamique et inclusive, dédiée à <br />
-                connecter les individus du monde
-                <br /> entier.
-                <br /> Notre objectif est de créer un <br />
-                espace numérique où chacun <br />
-                peut se sentir libre d'exprimer sa <br />
-                véritable identité, de partager ses <br />
-                passions et de tisser des liens
-                <br /> authentiques.
-              </Typography>
-            </S.Item>
-          </Grid>
-          <Grid xs={6} className="cell6">
-            <S.Item>
-              <S.Img6 src={fdqsn} />
-            </S.Item>
-          </Grid>
-          <Grid xs={6} className="cell7">
-            <S.Item>
-              <S.Img7 src={fdcontact} />
-            </S.Item>
-          </Grid>
-          <Grid xs={6} sx={{ backgroundColor: "#20835d" }} className="cell8">
-            <S.Item>
-              <FormContact />
-            </S.Item>
-          </Grid>
-          <Grid xs={12} className="cell9">
-            <S.Item>Newsletter</S.Item>
-          </Grid>
-        </Grid>
-      </Box> */}
     </S.Container>
   );
 };

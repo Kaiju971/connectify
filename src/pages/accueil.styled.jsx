@@ -48,7 +48,7 @@ export const Container = styled("div")`
 
 export const Cell12 = styled("div")`
   grid-column: 1 / span 2;
-
+  background-color: #daca3bff;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 50% 50%;
@@ -56,7 +56,7 @@ export const Cell12 = styled("div")`
   align-items: center;
 
   video {
-    width: 100%;
+    width: 100vw;
     grid-column: 1;
     grid-row: 1 / span 2;
   }
@@ -73,10 +73,12 @@ export const Cell12 = styled("div")`
     grid-row: 1 / span 2;
     color: #1d5a43;
     z-index: 10;
+    
   }
 
   .video22 {
     opacity: 0.5;
+    
   }
 
   .back22 {
@@ -110,7 +112,6 @@ export const FormInscr = styled("div")`
 
 export const Cell31 = styled("div")`
   grid-column: 1;
-
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -151,81 +152,3 @@ export const BoxContactForm = styled("div")`
   overflow: hidden;
 `;
 
-// export const Item = styled("div")`
-//   text-align: "center";
-//   height: 100vh;
-
-//   .gridItem {
-//     display: grid;
-//     grid-template-columns: 1fr;
-//     grid-template-rows: 50% 50%;
-//     text-align: center;
-//     align-items: center;
-//     color: #216249;
-//   }
-//   .cell1 {
-//     grid-column: 1;
-//     grid-row: 1 / span 2;
-//     z-index: 1;
-//     font-family: "Gravitas One", cursive;
-//   }
-//   .cell2 {
-//     grid-column: 1;
-//     grid-row: 1 / span 2;
-//     z-index: 0;
-//     font-family: "Gravitas One", cursive;
-//     background-color: #20835d;
-//     text-align: center;
-//   }
-
-//   p {
-//     width: 100%;
-//     text-align: center;
-//     color: white;
-//     padding-top: 10px;
-//     font-family: "Inter", sans-serif;
-//   }
-
-// h2 {
-//   text-align: center;
-//   padding-top: 13px;
-//   padding-bottom: 61px;
-//   font-family: "Gravitas One", cursive;
-//   color: yellow;
-// }
-
-//   .cell3 {
-//     background-image: url(${fdactualite});
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     /* position: relative; */
-//     height: 100vh;
-//   }
-// `;
-
-// export const Img3 = styled("div")`
-//   width: 100%;
-//   height: 100%;
-//   flex-shrink: 0;
-//   /* object-fit: fill; */
-//   /* position: absolute; */
-//   top: 0;
-//   left: 0;
-//   background-image: url(${fdactualite});
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   object-fit: contain;
-//   z-index: 20;
-// `;
-
-// export const Img6 = styled("img")`
-//   width: 50%;
-//   height: 100%;
-//   position: absolute;
-// `;
-
-// export const Img7 = styled("img")`
-//   width: 50%;
-//   height: 100%;
-//   position: absolute;
-// `;

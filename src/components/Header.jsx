@@ -18,7 +18,7 @@ import { useNavigate } from "react-router";
 import * as S from "./Header.styled";
 
 const drawerWidth = 240;
-const navItems = ["Accueil", "Connexion", "Inscription"];
+const navItems = ["Accueil", "Connexion", "Inscription", "Contact"];
 
 export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -64,9 +64,16 @@ export default function DrawerAppBar() {
               <MenuIcon />
             </IconButton>
             <Typography
-              variant="h6"
+              variant="h4"
+              fontFamily='"Chicle", cursive'
+              color="yellow"
               component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+              sx={{
+                my: 2,
+                opacity: 0.8,
+                flexGrow: 1,
+                display: { xs: "none", sm: "block" },
+              }}
             >
               Connectify
             </Typography>

@@ -1,10 +1,15 @@
 import React from "react";
-import * as S from "./contact.styled";
+import * as S from "./Contact.styled";
+import FormContact from "./FormContact";
+import fdcontact from "../image/fdcontact.jpg";
 
 export default function contact() {
   return (
     <S.Container>
-      <div>contact</div>
+      <S.Img src={fdcontact} />
+      <S.Form>
+        <FormContact />
+      </S.Form>
     </S.Container>
   );
 }

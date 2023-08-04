@@ -1,4 +1,4 @@
-import * as S from "./contact.styled";
+import * as S from "./Contact.styled";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -23,7 +23,6 @@ export default function FormContact() {
           variant="h2"
           sx={{
             textAlign: "center",
-            fontFamily: "Gravitas One', cursive",
           }}
         >
           Nous contacter
