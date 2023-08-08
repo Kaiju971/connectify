@@ -8,4 +8,11 @@ export const Container = styled("div")`
     margin: 0;
     padding: 0;
   }
+
+  h6 {
+    text-align: center;
+    padding-right: 20rem;
+    color: #daca3b;
+    font-family: "Gravitas One", cursive;
+  }
 `;
