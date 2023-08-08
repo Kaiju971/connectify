@@ -1,10 +1,112 @@
-import React from "react";
-import * as S from "./profil.styled";
+import React, { useState } from "react";
+import * as S from "./Profil.styled";
+import fdban1 from "../image/fdban1.jpg";
+import avatar from "../image/avatar.png";
+import Typography from "@mui/material/Typography";
+import Wall from "./Wall";
+import Gallery from "./Gallery";
+import Video from "./Video";
+import Music from "./Music";
 
-export default function profil() {
+const filterItemsArray = ["all", "wall", "gallery", "video", "music"];
+
+export default function Profil() {
+  const [hiddenWall, setHiddenWall] = useState(false);
+  const [hiddenGallery, setHiddenGallery] = useState(false);
+  const [hiddenVideo, setHiddenVideo] = useState(false);
+  const [hiddenMusic, setHiddenMusic] = useState(false);
+
+  const filter = (item) => {
+    switch (item) {
+      case "all":
+        setHiddenWall(false);
+        setHiddenGallery(false);
+        setHiddenVideo(false);
+        setHiddenMusic(false);
+        break;
+      case "wall":
+        setHiddenWall(false);
+        setHiddenGallery(true);
+        setHiddenVideo(true);
+        setHiddenMusic(true);
+        break;
+      case "gallery":
+        setHiddenGallery(false);
+        setHiddenWall(true);
+        setHiddenVideo(true);
+        setHiddenMusic(true);
+        break;
+      case "video":
+        setHiddenVideo(false);
+        setHiddenWall(true);
+        setHiddenGallery(true);
+        setHiddenMusic(true);
+        break;
+      case "music":
+        setHiddenMusic(false);
+        setHiddenWall(true);
+        setHiddenGallery(true);
+        setHiddenVideo(true);
+        break;
+      default:
+        setHiddenWall(false);
+        setHiddenGallery(false);
+        setHiddenVideo(false);
+        setHiddenMusic(false);
+    }
+  };
+
   return (
     <S.Container>
-      <div>profil</div>
+      <S.GridImges>
+        <S.Img1 src={fdban1} alt="img" />
+        <S.ImgContainer>
+          <div>
+            <S.ContStar>
+              <S.Star />
+              <S.Img2 src={avatar} alt="img2" />
+            </S.ContStar>
+          </div>
+          <div>
+            <Typography variant="h3" color="white" textAlign="center">
+              Nom
+            </Typography>
+          </div>
+          <div>
+            <Typography variant="h3" color="white" textAlign="center">
+              Prenom
+            </Typography>
+          </div>
+        </S.ImgContainer>
+      </S.GridImges>
+      <S.Content>
+        <S.Filter>
+          {filterItemsArray.map((item) => (
+            <S.MyButton
+              key={item}
+              variant="contained"
+              onClick={() => filter(item)}
+              sx={{ backgroundColor: "#DACA3B" }}
+            >
+              <Typography variant="body1" sx={{ color: "white" }}>
+                {item}
+              </Typography>
+            </S.MyButton>
+          ))}
+        </S.Filter>
+        <S.Wall>
+          <Wall hidden={hiddenWall} />
+        </S.Wall>
+        <S.Gallery>
+          <Gallery hidden={hiddenGallery} />
+        </S.Gallery>
+        <S.Video>
+          <Video hidden={hiddenVideo} />
+        </S.Video>
+        <S.Music>
+          <Music hidden={hiddenMusic} />
+        </S.Music>
+      </S.Content>
     </S.Container>
   );
 }

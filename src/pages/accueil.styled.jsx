@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import fdactualite from "../image/fdactualite.jpg";
+
 
 export const Container = styled("div")`
   width: 100%;

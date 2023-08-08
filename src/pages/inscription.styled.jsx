@@ -57,6 +57,37 @@ export const FlexContainer = styled("div")`
   padding-bottom: 2rem;
 `;
 
+export const FlexContainerPass = styled("div")`
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+`;
+
 export const Inscrivez = styled("div")`
+  color: white;
+`;
+export const FlexContainerNom = styled("div")`
+  display: flex;
+  justify-content: space-between;
+`;
+export const FlexControl = styled("div")`
+  color: white;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+`;
+
+export const RadioButton = styled("div")`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+`;
+
+export const Button = styled("div")`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   color: white;
 `;

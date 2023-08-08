@@ -5,11 +5,21 @@ import fdactualite from "../image/fdactualite.jpg";
 import fdqsn from "../image/fdqsn.jpg";
 import fdcontact from "../image/fdcontact.jpg";
 import Typography from "@mui/material/Typography";
-// import Grid from "@mui/system/Unstable_Grid";
 import Box from "@mui/system/Box";
 import FormContact from "./FormContact";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { lime } from "@mui/material/colors";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#070606",
+    },
+    secondary: lime,
+  },
+});
 
 const Accueil = () => {
   const translations = {
@@ -153,40 +163,47 @@ const Accueil = () => {
                 m: 1,
                 width: "25vw",
                 borderRadius: "10px",
-                borderBlockColor: " white",
-                backgroundColor: " white",
+                borderBlockColor: " grey",
+                backgroundColor: " grey",
                 boxShadow: " 0px 4px 4px gray inset",
               },
             }}
             noValidate
             autoComplete="off"
           >
-            <TextField
-              required
-              id="standard"
-              type="text"
-              placeholder="Entrez votre email..."
-              fullWidth
-            />
-            <br />
-            <br />
-            <Button
-              variant="contained"
-              color="primary"
-              sx={{
-                color: "white",
-                borderRadius: "10px",
-                width: "10vw",
-                filter: " blur(0)",
-                opacity: "1",
-              }}
-            >
-              Valider
-            </Button>
+            <ThemeProvider theme={theme}>
+              <TextField
+                required
+                id="Email"
+                label="Email"
+                color="secondary"
+                type="text"
+                sx={{
+                  backgroundColor: " grey",
+                  boxShadow: " 0px 8px 8px #566573  inset",
+                }}
+                placeholder="Entrez votre email..."
+                fullWidth
+              />
+              <br />
+              <br />
+              <Button
+                variant="contained"
+                color="primary"
+                sx={{
+                  color: "white",
+                  borderRadius: "10px",
+                  width: "10vw",
+                  filter: " blur(0)",
+                  opacity: "1",
+                }}
+              >
+                Valider
+              </Button>
+            </ThemeProvider>
           </Box>
         </S.FormInscr>
       </S.Cell12>
-
     </S.Container>
   );
 };
