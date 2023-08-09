@@ -7,6 +7,7 @@ import Wall from "./Wall";
 import Gallery from "./Gallery";
 import Video from "./Video";
 import Music from "./Music";
+import Sheet from "@mui/joy/Sheet";
 
 const filterItemsArray = ["all", "wall", "gallery", "video", "music"];
 
@@ -80,20 +81,30 @@ export default function Profil() {
         </S.ImgContainer>
       </S.GridImges>
       <S.Content>
-        <S.Filter>
-          {filterItemsArray.map((item) => (
-            <S.MyButton
-              key={item}
-              variant="contained"
-              onClick={() => filter(item)}
-              sx={{ backgroundColor: "#DACA3B" }}
-            >
-              <Typography variant="body1" sx={{ color: "white" }}>
-                {item}
-              </Typography>
-            </S.MyButton>
-          ))}
-        </S.Filter>
+        <Sheet
+          variant="inlined"
+          sx={{
+            width: 320,
+            maxHeight: 5000,
+            overflow: "auto",
+            borderRadius: "sm",
+          }}
+        >
+          <S.Filter>
+            {filterItemsArray.map((item) => (
+              <S.MyButton
+                key={item}
+                variant="contained"
+                onClick={() => filter(item)}
+                sx={{ backgroundColor: "#DACA3B" }}
+              >
+                <Typography variant="body1" sx={{ color: "white" }}>
+                  {item}
+                </Typography>
+              </S.MyButton>
+            ))}
+          </S.Filter>
+        </Sheet>
         <S.Wall>
           <Wall hidden={hiddenWall} />
         </S.Wall>

@@ -9,10 +9,22 @@ export const Container = styled("div")`
     padding: 0;
   }
 
-  h6 {
+  video {
+    grid-column: 1 / span 2;
+    width: 57vw;
+    height: 80vh;
+    object-fit: cover;
+    position: relative;
+  }
+
+  h5 {
     text-align: center;
     padding-right: 20rem;
     color: #daca3b;
     font-family: "Gravitas One", cursive;
+  }
+  .title {
+    font-family: "Gravitas One", cursive;
+    padding-bottom: 7vh;
   }
 `;

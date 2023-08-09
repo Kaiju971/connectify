@@ -53,7 +53,7 @@ export const Img2 = styled("img")`
 
 export const Content = styled("div")`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 30% 70%;
   grid-template-rows: auto;
 `;
 
@@ -103,21 +103,17 @@ export const ContStar = styled("div")`
 
 export const Filter = styled("div")`
   grid-column: 1;
-
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  margin-top: 10vh;
+  margin-top: 23.8vh;
+  
 `;
 
 export const MyButton = styled(Button)`
-  width: 8vw;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  
+  width: 15vw;
+  height: 10vh;
 `;
 
 export const Wall = styled("div")`

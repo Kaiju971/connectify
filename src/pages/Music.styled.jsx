@@ -9,10 +9,14 @@ export const Container = styled("div")`
     padding: 0;
   }
 
-  h6 {
+  h5 {
     text-align: center;
     padding-right: 20rem;
     color: #daca3b;
+    font-family: "Gravitas One", cursive;
+  }
+
+  .title {
     font-family: "Gravitas One", cursive;
   }
 `;

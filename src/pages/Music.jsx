@@ -8,13 +8,13 @@ export default function Music({hidden}) {
   return (
     <S.Container>
       <Typography
-        variant="h6"
-        sx={{ pt: 8 }}
+        variant="h5"
+        sx={{ pt: 8, fontSize: "4vw" }}
         color="#DACA3B"
         id="walls-text"
         fontFamily='"Gravitas One", cursive'
       >
-        <div>Music</div>
+        <div className="title">Music</div>
       </Typography>
     </S.Container>
   );
