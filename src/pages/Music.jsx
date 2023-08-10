@@ -2,7 +2,8 @@ import React from "react";
 import * as S from "./Music.styled";
 import Typography from "@mui/material/Typography";
 
-export default function Music({hidden}) {
+
+export default function Music({ hidden }) {
   if (hidden) return null;
 
   return (
@@ -16,6 +17,7 @@ export default function Music({hidden}) {
       >
         <div className="title">Music</div>
       </Typography>
+
     </S.Container>
   );
 }
