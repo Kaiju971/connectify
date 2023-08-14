@@ -6,7 +6,7 @@ import fdqsn from "../image/fdqsn.jpg";
 import fdcontact from "../image/fdcontact.jpg";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
-import FormContact from "./FormContact";
+import FormContact from "../components/FormContact";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -29,6 +29,7 @@ const Accueil = () => {
     de: "Willkommen",
     uk: "Ласкаво просимо",
     jap: "ようこそ",
+    ant: "Bienvyni",
   };
 
   useEffect(() => {

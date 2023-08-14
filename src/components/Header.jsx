@@ -12,17 +12,38 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { useNavigate } from "react-router";
+import { useState } from "react";
 
+import { useLocation, useNavigate } from "react-router";
 import * as S from "./Header.styled";
 
+let navItems = [];
+const menuItemsArrayProfil = ["profil", "contact", "deconnexion"];
+const menuItemsArrayConnect = ["accueil", "connexion", "inscription"];
+
 const drawerWidth = 240;
-const navItems = ["Accueil", "Connexion", "Inscription", "Contact"];
 
 export default function DrawerAppBar() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const isSelected = (item) =>
+    pathname.includes(item) || (pathname === "/" && item === "accueil");
+
+  console.log(pathname);
+
+  if (pathname === "/Profil" || pathname === "/contact")
+    navItems = [...menuItemsArrayProfil];
+  if (
+    pathname === "/" ||
+    pathname === "/accueil" ||
+    pathname === "/connexion" ||
+    pathname === "/inscription" ||
+    pathname === "/deconnexion"
+  )
+    navItems = [...menuItemsArrayConnect];
+  console.log(navItems);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -37,7 +58,10 @@ export default function DrawerAppBar() {
       <List>
         {navItems.map((item) => (
           <ListItem key={item}>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton
+              selected={isSelected(item)}
+              sx={{ textAlign: "center" }}
+            >
               <ListItemText primary={item} onClick={() => navigate(item)} />
             </ListItemButton>
           </ListItem>
@@ -51,7 +75,11 @@ export default function DrawerAppBar() {
         <CssBaseline />
         <AppBar
           component="nav"
-          sx={{ backgroundColor: "transparent", boxShadow: "none" }}
+          sx={{
+            backgroundColor:
+              pathname === "/Profil" ? "#216249ff" : "transparent",
+            boxShadow: "none",
+          }}
         >
           <Toolbar>
             <IconButton
@@ -77,17 +105,32 @@ export default function DrawerAppBar() {
             >
               Connectify
             </Typography>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <List sx={{ display: { xs: "none", sm: "flex" } }}>
               {navItems.map((item) => (
-                <Button
-                  key={item}
-                  sx={{ color: "#DACA3B" }}
-                  onClick={() => navigate(item)}
-                >
-                  {item}
-                </Button>
+                <ListItem key={item} disablePadding>
+                  <ListItemButton
+                    selected={isSelected(item)}
+                    onClick={() => navigate(item)}
+                    sx={{
+                      color: "white",
+                      textTransform: "capitalize",
+                      "&.Mui-selected": {
+                        color: item === "inscription" ? "white" : "#daca3bff",
+                        backgroundColor:
+                          item === "inscription" ? "#daca3bff" : "transparent",
+                        borderRadius: item === "inscription" ? "10px" : "0",
+                        boxShadow:
+                          item === "inscription"
+                            ? " 0px 4px 4px #2e4f44 "
+                            : "transparent",
+                      },
+                    }}
+                  >
+                    {item}
+                  </ListItemButton>
+                </ListItem>
               ))}
-            </Box>
+            </List>
           </Toolbar>
         </AppBar>
         <Box component="nav">

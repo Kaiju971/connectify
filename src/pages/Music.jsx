@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./Music.styled";
 import Typography from "@mui/material/Typography";
+import Spotify from "../pages/screens/auth/Login";
 
 
 export default function Music({ hidden }) {
@@ -17,7 +18,7 @@ export default function Music({ hidden }) {
       >
         <div className="title">Music</div>
       </Typography>
-
+      <Spotify />
     </S.Container>
   );
 }

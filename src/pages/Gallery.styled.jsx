@@ -36,3 +36,17 @@ export const Img4 = styled("Img")`
   height: 36.2vh;
   margin-right: 33rem;
 `;
+
+export const PhotoBox = styled("div")`
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-template-rows: auto;
+  row-gap: 2%;
+  column-gap: 1.1%;
+  align-items:center;
+`;
+
+export const ListItem = styled("div")`
+  width: 96%;
+  
+`;

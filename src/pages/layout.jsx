@@ -7,17 +7,23 @@ const Layout = () => {
       {/* <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Accueil</Link>
           </li>
           <li>
-            <Link to="/blogs">Blogs</Link>
+            <Link to="/Connexion">connexion</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/Contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/Inscription">Inscription</Link>
+          </li>
+          <li>
+            <Link to="/Profil">Profil</Link>
           </li>
         </ul>
       </nav> */}
-<Topbar />
+      <Topbar />
 
       <Outlet />
     </>

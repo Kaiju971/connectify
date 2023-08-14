@@ -8,7 +8,8 @@ import Gallery from "./Gallery";
 import Video from "./Video";
 import Music from "./Music";
 import Sheet from "@mui/joy/Sheet";
-
+import Spotify from "../pages/screens/auth/Login";
+// import Spotify from "../pages/Spotify";
 
 const filterItemsArray = ["all", "wall", "gallery", "video", "music"];
 
@@ -108,16 +109,13 @@ export default function Profil() {
         </Sheet>
         <S.Wall>
           <Wall hidden={hiddenWall} />
-        </S.Wall>
-        <S.Gallery>
           <Gallery hidden={hiddenGallery} />
-        </S.Gallery>
-        <S.Video>
           <Video hidden={hiddenVideo} />
-        </S.Video>
-        <S.Music>
           <Music hidden={hiddenMusic} />
-        </S.Music>
+          <Spotify /> 
+          {/* {Login}  */}
+
+        </S.Wall>
       </S.Content>
     </S.Container>
   );

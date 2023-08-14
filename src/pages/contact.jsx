@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./Contact.styled";
-import FormContact from "./FormContact";
+import FormContact from "../components/FormContact";
 import fdcontact from "../image/fdcontact.jpg";
 
 export default function contact() {

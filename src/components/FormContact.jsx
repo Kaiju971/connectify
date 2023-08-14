@@ -1,4 +1,4 @@
-import * as S from "./Contact.styled";
+import * as S from "../pages/Contact.styled";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";

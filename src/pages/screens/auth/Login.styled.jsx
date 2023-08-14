@@ -27,9 +27,9 @@ export const Container = styled("div")`
     width: 200px;
     padding: 15px 0px;
     text-align: center;
-    background-color: #fefefe;
+    background-color: #191414;
     border-radius: 50px;
-    color: #1f1f1f;
+    color: #1DB954;
     font-weight: 600;
     margin-top: 20%;
   }
