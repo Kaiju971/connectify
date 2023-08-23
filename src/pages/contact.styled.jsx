@@ -17,6 +17,7 @@ export const FormContainer = styled("div")`
   align-items: center;
   justify-content: space-evenly;
   height: 100vh;
+  width: 100%;
   padding-bottom: 15vh;
   background-color: #20835d;
   font-family: "Gravitas One", cursive;

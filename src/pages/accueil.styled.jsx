@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Container = styled("div")`
   width: 100%;
   display: grid;
@@ -73,12 +72,10 @@ export const Cell12 = styled("div")`
     grid-row: 1 / span 2;
     color: #1d5a43;
     z-index: 10;
-    
   }
 
   .video22 {
     opacity: 0.5;
-    
   }
 
   .back22 {
@@ -123,6 +120,7 @@ export const Cell32 = styled("div")`
   grid-column: 2;
   height: 100vh;
   background-color: #20835d;
+  width: 50vw;
 `;
 
 export const Img = styled("img")`
@@ -133,11 +131,11 @@ export const Img = styled("img")`
 `;
 
 export const Texts = styled("div")`
-  width: 50vw;
+ 
   min-height: 100vh;
   text-align: center;
-  padding-left: 8vw;
-  padding-right: 8vw;
+  /* padding-left: 8vw;
+  padding-right: 8vw; */
   line-height: 4;
   color: #daca3bff;
 `;
@@ -150,5 +148,5 @@ export const BoxContactForm = styled("div")`
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  width: 100%;
 `;
-

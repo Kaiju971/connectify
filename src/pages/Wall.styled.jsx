@@ -16,9 +16,9 @@ export const Container = styled("div")`
 
   h5 {
     text-align: center;
-    padding-right: 20rem;
+    padding-right: 15rem;
     padding-top: 4vh;
-    /* color: #daca3b; */
+    color: #daca3b;
     font-family: "Gravitas One", cursive;
   }
 `;

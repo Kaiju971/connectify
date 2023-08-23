@@ -51,10 +51,11 @@ export default function Wall({ hidden }) {
     <S.Container>
       <Typography
         variant="h5"
-        sx={{ py: 8, fontSize: "4vw" }}
+        sx={{ py: 8 }}
         color="#DACA3B"
         id="walls-text"
         fontFamily='"Gravitas One", cursive'
+        textAlign="center"
       >
         <div className="title">My Walls</div>
       </Typography>
@@ -64,7 +65,7 @@ export default function Wall({ hidden }) {
         </S.GridTitle>
 
         <S.GridImg>
-          <S.Img src={homer} alt="" />
+          <S.Img src={homer} alt="homer" />
           <S.TextImg>
             <Typography variant="h6" sx={{ pt: 3 }}>
               J’aime le classique...
@@ -128,7 +129,6 @@ export default function Wall({ hidden }) {
                 sx={{
                   display: "flex",
                   justifyContent: "start",
-                  fontSize: "4rem",
                 }}
               >
                 <DownloadForOfflineIcon
@@ -136,7 +136,7 @@ export default function Wall({ hidden }) {
                   sx={{
                     color: "#DACA3B",
                     borderRadius: "50%",
-                    fontSize: "4rem",
+                    fontSize: "6vw",
                     borderColor: "secondary.main",
                   }}
                 />
@@ -157,7 +157,7 @@ export default function Wall({ hidden }) {
             color: "#DACA3B",
             borderRadius: "50px",
             width: "1vw",
-            fontSize: "4rem",
+            fontSize: "6vw",
           }}
         >
           <SendRoundedIcon

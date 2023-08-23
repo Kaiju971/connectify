@@ -46,8 +46,8 @@ export const Img2 = styled("img")`
   grid-column: 1;
   border-radius: 50%;
   width: 5.5vw;
-  margin-left: 3rem;
-  margin-top: -3rem;
+  margin-left: 3vw;
+  margin-top: -4vw;
   z-index: 11;
 `;
 
@@ -60,8 +60,8 @@ export const Content = styled("div")`
 export const Star = styled("div")`
   grid-row: 1 / span 2;
   grid-column: 1;
-  margin-left: 3rem;
-  margin-top: -3rem;
+  margin-left: 3vw;
+  margin-top: -5vw;
   border: 3px blueviolet;
   background: #8d5dff;
   width: 80px;
@@ -118,16 +118,6 @@ export const MyButton = styled(Button)`
 
 export const Wall = styled("div")`
   grid-column: 2;
+  margin-top: 2vh;
 `;
-export const Gallery = styled("div")`
-  grid-column: 2;
-  margin-top: 10vh;
-`;
-export const Video = styled("div")`
-  grid-column: 2;
-  margin-top: 10vh;
-`;
-export const Music = styled("div")`
-  grid-column: 2;
-  margin-top: 10vh;
-`;
+

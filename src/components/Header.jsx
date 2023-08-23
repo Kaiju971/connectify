@@ -13,9 +13,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
-
+import CloseIcon from "@mui/icons-material/Close";
 import { useLocation, useNavigate } from "react-router";
 import * as S from "./Header.styled";
+// import { yellow } from "@mui/material/colors";
 
 let navItems = [];
 const menuItemsArrayProfil = ["profil", "contact", "deconnexion"];
@@ -50,8 +51,21 @@ export default function DrawerAppBar() {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", backgroundColor: "#20835D", height: "100%" }}
+    >
+      <S.CloseIconStyle>
+        <Typography variant="h5" color="" className="close">
+          Close
+        </Typography>
+        <CloseIcon sx={{ fontSize: "2rem" }} />
+      </S.CloseIconStyle>
+      <Typography
+        variant="h6"
+        fontFamily='"Chicle", cursive'
+        sx={{ my: 2, color: "#daca3bff" }}
+      >
         Connectify
       </Typography>
       <Divider />
@@ -60,7 +74,7 @@ export default function DrawerAppBar() {
           <ListItem key={item}>
             <ListItemButton
               selected={isSelected(item)}
-              sx={{ textAlign: "center" }}
+              sx={{ textAlign: "center", color: "white" }}
             >
               <ListItemText primary={item} onClick={() => navigate(item)} />
             </ListItemButton>
@@ -96,11 +110,13 @@ export default function DrawerAppBar() {
               fontFamily='"Chicle", cursive'
               color="yellow"
               component="div"
+              onClick={() => navigate("accueil")}
               sx={{
                 my: 2,
                 opacity: 0.8,
                 flexGrow: 1,
                 display: { xs: "none", sm: "block" },
+                cursor: "pointer",
               }}
             >
               Connectify

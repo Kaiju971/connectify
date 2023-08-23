@@ -7,9 +7,6 @@ import Wall from "./Wall";
 import Gallery from "./Gallery";
 import Video from "./Video";
 import Music from "./Music";
-import Sheet from "@mui/joy/Sheet";
-import Spotify from "../pages/screens/auth/Login";
-// import Spotify from "../pages/Spotify";
 
 const filterItemsArray = ["all", "wall", "gallery", "video", "music"];
 
@@ -83,7 +80,7 @@ export default function Profil() {
         </S.ImgContainer>
       </S.GridImges>
       <S.Content>
-        <Sheet
+        {/* <Sheet
           variant="inlined"
           sx={{
             width: 320,
@@ -91,30 +88,29 @@ export default function Profil() {
             overflow: "auto",
             borderRadius: "sm",
           }}
-        >
-          <S.Filter>
-            {filterItemsArray.map((item) => (
-              <S.MyButton
-                key={item}
-                variant="contained"
-                onClick={() => filter(item)}
-                sx={{ backgroundColor: "#DACA3B" }}
-              >
-                <Typography variant="body1" sx={{ color: "white" }}>
-                  {item}
-                </Typography>
-              </S.MyButton>
-            ))}
-          </S.Filter>
-        </Sheet>
+        > */}
+        <S.Filter>
+          {filterItemsArray.map((item) => (
+            <S.MyButton
+              key={item}
+              variant="contained"
+              onClick={() => filter(item)}
+              sx={{ backgroundColor: "#DACA3B" }}
+            >
+              <Typography variant="h6" sx={{ color: "white" }}>
+                {item}
+              </Typography>
+            </S.MyButton>
+          ))}
+        </S.Filter>
+        {/* </Sheet> */}
         <S.Wall>
           <Wall hidden={hiddenWall} />
           <Gallery hidden={hiddenGallery} />
           <Video hidden={hiddenVideo} />
           <Music hidden={hiddenMusic} />
-          <Spotify /> 
+          {/* <Spotify />  */}
           {/* {Login}  */}
-
         </S.Wall>
       </S.Content>
     </S.Container>
