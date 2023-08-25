@@ -13,17 +13,8 @@ import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { lime } from "@mui/material/colors";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#070606",
-    },
-    secondary: lime,
-  },
-});
+import { UsersService } from "../Service/DatabaseService";
+import { useQuery } from "react-query";
 
 export default function Connexion() {
   const [showPassword, setShowPassword] = useState(false);
@@ -34,8 +25,9 @@ export default function Connexion() {
     event.preventDefault();
   };
 
+  const { data, status } = useQuery("users", UsersService.getAll);
+
   return (
-    // <ThemeProvider theme={theme}>
     <S.Container>
       <Box sx={{ width: "100%" }}>
         <Grid container rowSpacing={0} columnSpacing={0}>
@@ -147,6 +139,5 @@ export default function Connexion() {
         </Grid>
       </Box>
     </S.Container>
-    // </ThemeProvider>
   );
 }

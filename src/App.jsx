@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import { Global as GlobalStyles, css } from "@emotion/react";
 import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
 import { lime } from "@mui/material/colors";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 export let theme = createTheme({
   palette: {
@@ -45,34 +46,37 @@ export let theme = createTheme({
 theme = responsiveFontSizes(theme);
 
 function App() {
+  const queryClient = new QueryClient();
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Header />
-        <AppRoutes />
-        <GlobalStyles
-          styles={css`
-            #root,
-            body,
-            html {
-              margin: 0;
-              scroll-behavior: smooth;
-              overflow-x: hidden;
-              overflow-y: scroll;
-              scrollbar-width: none;
-              -ms-overflow-style: none; /* IE 10+ */
-              scrollbar-width: none; /* Firefox */
-              &::-webkit-scrollbar {
-                /* chrome based */
-                width: 0px;
+        <QueryClientProvider client={queryClient}>
+          <Header />
+          <AppRoutes />
+          <GlobalStyles
+            styles={css`
+              #root,
+              body,
+              html {
+                margin: 0;
+                scroll-behavior: smooth;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                scrollbar-width: none;
+                -ms-overflow-style: none; /* IE 10+ */
+                scrollbar-width: none; /* Firefox */
+                &::-webkit-scrollbar {
+                  /* chrome based */
+                  width: 0px;
+                }
               }
-            }
-            /* #root {
+              /* #root {
             position: relative;
           } */
-          `}
-        />
-        <Footer />
+            `}
+          />
+          <Footer />
+        </QueryClientProvider>
       </ThemeProvider>
     </>
   );
