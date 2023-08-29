@@ -30,20 +30,19 @@ export default function AppRoutes() {
   //    }
   //  }, []);
   //  return !token ? (
-      // <Login /> 
+  // <Login />
   //  ) : (
-     return (
-       <Routes>
-
-         <Route path="/" element={<Accueil />} />
-         <Route path="/Accueil" element={<Accueil />} />
-         <Route path="/connexion" element={<Connexion />} />
-         <Route path="/deconnexion" element={<Connexion />} />
-         <Route path="/inscription" element={<Inscription />} />
-         <Route path="/contact" element={<Contact />} />
-         <Route path="/profil" element={<Profil />} />
-         <Route path="*" element={<NoPage />} />
-         <Route path="/Login" element={<Login />} />
-       </Routes>
-     );
+  return (
+    <Routes>
+      <Route path="/" element={<Accueil />} />
+      <Route path="/accueil" element={<Accueil />} />
+      <Route path="/connexion" element={<Connexion />} />
+      <Route path="/deconnexion" element={<Connexion />} />
+      <Route path="/inscription" element={<Inscription />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/profil" element={<Profil />} />
+      <Route path="*" element={<NoPage />} />
+      <Route path="/Login" element={<Login />} />
+    </Routes>
+  );
 }

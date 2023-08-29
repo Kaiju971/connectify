@@ -3,6 +3,7 @@ import * as S from "./Profil.styled";
 import fdban1 from "../image/fdban1.jpg";
 import avatar from "../image/avatar.png";
 import Typography from "@mui/material/Typography";
+import Cookies from "js-cookie";
 import Wall from "./Wall";
 import Gallery from "./Gallery";
 import Video from "./Video";
@@ -15,6 +16,10 @@ export default function Profil() {
   const [hiddenGallery, setHiddenGallery] = useState(false);
   const [hiddenVideo, setHiddenVideo] = useState(false);
   const [hiddenMusic, setHiddenMusic] = useState(false);
+  const nomCookie = Cookies.get("nom");
+  const nom = nomCookie !== "undefined" ? nomCookie : "Nom";
+  const prenomCookie = Cookies.get("prenom");
+  const prenom = prenomCookie !== "undefined" ? prenomCookie : "Prenom";
 
   const filter = (item) => {
     switch (item) {
@@ -69,12 +74,12 @@ export default function Profil() {
           </div>
           <div>
             <Typography variant="h3" color="white" textAlign="center">
-              Nom
+              {nom}
             </Typography>
           </div>
           <div>
             <Typography variant="h3" color="white" textAlign="center">
-              Prenom
+              {prenom}
             </Typography>
           </div>
         </S.ImgContainer>

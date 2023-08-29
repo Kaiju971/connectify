@@ -8,6 +8,24 @@ class DatabaseService {
     return Object.values(snapshot.val());
   };
 
+  getUserCheck = async (email, password) => {
+    const usersRef = ref(db, this.collectionName);
+
+    const snapshot = await get(usersRef);
+
+    const users = [];
+    snapshot.forEach((userSnapshot) => {
+      userSnapshot.forEach((secondLevelSnapshot) => {
+        const user = secondLevelSnapshot.val();
+        if (user && user.email === email && user.password === password) {
+          users.push(user);
+        }
+      });
+    });
+
+    return users;
+  };
+
   // save a new document in the database
   create = async (data) => {
     const newRef = ref(db, this.collectionName).push();

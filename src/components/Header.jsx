@@ -34,7 +34,7 @@ export default function DrawerAppBar() {
 
   console.log(pathname);
 
-  if (pathname === "/Profil" || pathname === "/contact")
+  if (pathname === "/profil" || pathname === "/contact")
     navItems = [...menuItemsArrayProfil];
   if (
     pathname === "/" ||
@@ -44,7 +44,6 @@ export default function DrawerAppBar() {
     pathname === "/deconnexion"
   )
     navItems = [...menuItemsArrayConnect];
-  console.log(navItems);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -91,7 +90,7 @@ export default function DrawerAppBar() {
           component="nav"
           sx={{
             backgroundColor:
-              pathname === "/Profil" ? "#216249ff" : "transparent",
+              pathname === "/profil" ? "#216249ff" : "transparent",
             boxShadow: "none",
           }}
         >
