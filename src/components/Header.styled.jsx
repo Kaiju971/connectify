@@ -15,7 +15,6 @@ export const CloseIconStyle = styled("div")`
   align-items: center;
   color: white;
 
-
   .close {
     text-transform: capitalize;
     opacity: 0;
@@ -59,4 +58,9 @@ export const CloseIconStyle = styled("div")`
       }
     }
   }
+`;
+
+export const Img = styled("img")`
+  width: 20vw;
+  height: 100%;
 `;

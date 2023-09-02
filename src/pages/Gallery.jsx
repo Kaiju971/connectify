@@ -175,7 +175,7 @@ import fdqsnCopie from "../image/fdqsnCopie.jpg";
 //   );
 // }
 
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import * as S from "./Gallery.styled";
 import axios from "axios";
 import Grid from "@mui/material/Unstable_Grid2";
@@ -183,10 +183,10 @@ import Box from "@mui/material/Box";
 import { Button, TextField, Typography } from "@mui/material";
 
 const images = [
-  { src: { imgGroupe }, className: "pict1" },
-  { src: { albumDisco }, className: "pict2" },
-  { src: { imgChignon }, className: "pict3" },
-  { src: { fdqsnCopie }, className: "pict4" },
+  { src: imgGroupe, className: "pict1" },
+  { src: albumDisco, className: "pict2" },
+  { src: imgChignon, className: "pict3" },
+  { src: fdqsnCopie, className: "pict4" },
 ];
 
 export default function Gallery({ hidden }) {
@@ -253,10 +253,10 @@ export default function Gallery({ hidden }) {
             <Grid xs={6}>
               <S.Img3
                 isSelected={selected}
-                src={images.src}
+                src={image.src}
                 className="pict3 picture"
-                onMouseOver={() => handleImageMouseOver(".pict3")}
-                onMouseLeave={() => handleImageMouseLeave(".pict3")}
+                // onMouseOver={() => handleImageMouseOver(".pict1")}
+                // onMouseLeave={() => handleImageMouseLeave(".pict1")}
               />
             </Grid>
           ))}

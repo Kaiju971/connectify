@@ -81,7 +81,9 @@ export const Img3 = styled("img")(
   margin-right: 33rem;
     transition: filter 0.3s ease-in-out;
   z-index: ${({ isSelected }) => (isSelected ? "10" : "-1")};
-  filter: ${({ isSelected }) => (isSelected ? "none" : "blur(4px)")};  &:hover {
+  filter: ${({ isSelected }) => (isSelected ? "none" : "blur(4px)")};
+  
+    &:hover {
     -webkit-animation: scale-up-right 0.4s cubic-bezier(0.6, 0.04, 0.98, 0.335)
       both;
     animation: scale-up-right 0.4s cubic-bezier(0.6, 0.04, 0.98, 0.335) both;

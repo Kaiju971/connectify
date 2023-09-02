@@ -16,25 +16,49 @@ import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { lime } from "@mui/material/colors";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#070606",
-    },
-    secondary: lime,
-  },
-});
+import { UsersService } from "../Service/DatabaseService";
+import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router";
 
 export default function Inscription() {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
+  };
+
+  const [user, setUser] = useState({
+    nom: "",
+    prenom: "",
+    genre: "",
+    email: "",
+    password: "",
+    abonnement: false,
+  });
+
+  const { nom, prenom, genre, email, password, abonnement } = user;
+
+  const onInputChange = (event) => {
+    setUser({ ...user, [event.target?.name]: event.target?.value });
+    console.log(user);
+  };
+
+  const setUp = async () => {
+    try {
+      const data = await UsersService.createUser(user);
+      console.log(data);
+      if (!data) {
+        enqueueSnackbar("erreur", {
+          variant: "error",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -75,6 +99,9 @@ export default function Inscription() {
                         required
                         id="nom:"
                         label="nom"
+                        value={nom}
+                        name="nom"
+                        onChange={(e) => onInputChange(e)}
                         placeholder="Entrez votre nom..."
                         color="secondary"
                         sx={{
@@ -88,6 +115,9 @@ export default function Inscription() {
                         required
                         id="Prénom:"
                         label="Prénom"
+                        value={prenom}
+                        name="prenom"
+                        onChange={(e) => onInputChange(e)}
                         placeholder="Entrez votre prénom..."
                         color="secondary"
                         sx={{
@@ -102,6 +132,9 @@ export default function Inscription() {
                       required
                       id="Email"
                       label="Email"
+                      value={email}
+                      name="email"
+                      onChange={(e) => onInputChange(e)}
                       placeholder="Entrez votre Email"
                       color="secondary"
                       sx={{
@@ -118,8 +151,8 @@ export default function Inscription() {
                           row
                           aria-labelledby="radio-buttons"
                           name="genre"
-                          // value={genre}
-                          // onChange={(e) => onInputChange(e)}
+                          value={genre}
+                          onChange={(e) => onInputChange(e)}
                           sx={{
                             color: "grey",
                             "&.Mui-checked": {
@@ -214,6 +247,9 @@ export default function Inscription() {
                               </InputAdornment>
                             }
                             label="Password"
+                            value={password}
+                            name="password"
+                            onChange={(e) => onInputChange(e)}
                           />
                         </FormControl>
                       </Box>
@@ -259,6 +295,7 @@ export default function Inscription() {
                     <Button
                       variant="contained"
                       size="medium"
+                      onClick={() => setUp()}
                       sx={{
                         m: 1,
                         backgroundColor: "#DACA3B",
@@ -272,7 +309,15 @@ export default function Inscription() {
                   </S.FlexContainer>
                 </Box>
                 <S.Inscrivez>
-                  Pas de compte ? <u>Inscrivez-vous</u>
+                  Déja Inscrit ?{" "}
+                  <u
+                    style={{
+                      cursor: "pointer",
+                    }}
+                    onClick={() => navigate("/inscription")}
+                  >
+                    Connectez-vous
+                  </u>
                 </S.Inscrivez>
               </S.FormContainer>
             </S.Item>

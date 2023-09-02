@@ -41,6 +41,10 @@ export const FlexContainer = styled("div")`
   background-color: #1d5a43;
   padding-top: 2rem;
   padding-bottom: 2rem;
+
+  @media (max-width: 750px) {
+    width: 80vw;
+  }
 `;
 
 export const Img = styled("img")`

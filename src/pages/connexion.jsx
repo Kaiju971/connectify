@@ -93,12 +93,12 @@ export default function Connexion() {
     <S.Container>
       <Box sx={{ width: "100%" }}>
         <Grid container rowSpacing={0} columnSpacing={0}>
-          <Grid xs={6}>
+          <Grid xs={12} md={6}>
             <S.Item>
               <S.Img src={fdconnexion} />
             </S.Item>
           </Grid>
-          <Grid xs={6}>
+          <Grid xs={12} md={6}>
             <S.Item>
               <S.FormContainer>
                 <Typography
@@ -117,7 +117,7 @@ export default function Connexion() {
                   sx={{
                     "& .MuiTextField-root": {
                       m: 3,
-                      width: "25vw",
+                      width: { xs: "50vw", md: "25vw" },
                       borderRadius: "10px",
                     },
                   }}
@@ -140,9 +140,14 @@ export default function Connexion() {
                         boxShadow: " 0px 8px 8px #566573  inset",
                       }}
                     />
-                    <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                      }}
+                    >
                       <FormControl
-                        sx={{ m: 1, width: "25vw" }}
+                        sx={{ m: 1, width: { xs: "50vw", md: "25vw" } }}
                         variant="outlined"
                       >
                         <InputLabel
@@ -201,7 +206,15 @@ export default function Connexion() {
                   </S.FlexContainer>
                 </Box>
                 <S.Inscrivez>
-                  Pas de compte ? <u>Inscrivez-vous</u>
+                  Pas de compte ?{" "}
+                  <u
+                    style={{
+                      cursor: "pointer",
+                    }}
+                    onClick={() => navigate("/inscription")}
+                  >
+                    Inscrivez-vous
+                  </u>
                 </S.Inscrivez>
               </S.FormContainer>
             </S.Item>

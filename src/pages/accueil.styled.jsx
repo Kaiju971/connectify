@@ -6,6 +6,7 @@ export const Container = styled("div")`
   grid-template-columns: 50vw 50vw;
   grid-template-rows: auto;
   justify-items: center;
+  align-items: center;
 
   * {
     margin: 0;
@@ -41,7 +42,11 @@ export const Container = styled("div")`
     text-align: center;
     padding-top: 13px;
     font-family: "Gravitas One", cursive;
-    color: yellow;
+    /* color: yellow; */
+  }
+
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -95,6 +100,10 @@ export const Cell12 = styled("div")`
     width: 100vw;
     filter: blur(2px);
   }
+
+  @media (max-width: 750px) {
+    grid-column: 1;
+  }
 `;
 
 export const FormInscr = styled("div")`
@@ -105,6 +114,12 @@ export const FormInscr = styled("div")`
   text-align: center;
   border-radius: 20px;
   padding: 4vh;
+
+  @media (max-width: 750px) {
+    margin-left: 4vw;
+    margin-right: 4vw;
+    height: 60vh;
+  }
 `;
 
 export const Cell31 = styled("div")`
@@ -116,11 +131,42 @@ export const Cell31 = styled("div")`
   background-color: #216249ff;
 `;
 
+export const Cell31img = styled("div")`
+  grid-column: 1;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #216249ff;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
+`;
+
+export const Cell31img1 = styled("div")`
+  width: 100vw;
+  height: 100vh;
+  grid-column: 1;
+  background-color: #216249ff;
+  display: none;
+
+  @media (max-width: 750px) {
+    display: block;
+  }
+`;
+
 export const Cell32 = styled("div")`
   grid-column: 2;
   height: 100vh;
   background-color: #20835d;
   width: 50vw;
+  text-align: center;
+
+  @media (max-width: 750px) {
+    grid-column: 1;
+    width: 100vw;
+  }
 `;
 
 export const Img = styled("img")`
@@ -128,16 +174,35 @@ export const Img = styled("img")`
   height: 100%;
   flex-shrink: 0;
   object-fit: cover;
+
+  @media (max-width: 750px) {
+    width: 100vw;
+  }
+`;
+
+export const Img1 = styled("img")`
+  width: 50vw;
+  height: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+
+  @media (max-width: 750px) {
+    display: none;
+  }
 `;
 
 export const Texts = styled("div")`
- 
   min-height: 100vh;
   text-align: center;
-  /* padding-left: 8vw;
-  padding-right: 8vw; */
+
   line-height: 4;
   color: #daca3bff;
+
+  @media (max-width: 750px) {
+    padding-left: 8vw;
+    padding-right: 8vw;
+    width: 100vw;
+  }
 `;
 
 export const BoxContactForm = styled("div")`

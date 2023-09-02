@@ -8,3 +8,9 @@ export const Container = styled("div")`
   text-align: center;
   color: white;
 `;
+
+export const Img = styled("img")`
+  width: 5vw;
+  height: 100%;
+  /* padding-right: 70vw; */
+`;

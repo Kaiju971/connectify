@@ -16,13 +16,13 @@ import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { useLocation, useNavigate } from "react-router";
 import * as S from "./Header.styled";
-// import { yellow } from "@mui/material/colors";
+import qrcode from "../image/qrcode.png";
 
 let navItems = [];
 const menuItemsArrayProfil = ["profil", "contact", "deconnexion"];
 const menuItemsArrayConnect = ["accueil", "connexion", "inscription"];
 
-const drawerWidth = 240;
+const drawerWidth = "100%";
 
 export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -31,8 +31,6 @@ export default function DrawerAppBar() {
 
   const isSelected = (item) =>
     pathname.includes(item) || (pathname === "/" && item === "accueil");
-
-  console.log(pathname);
 
   if (pathname === "/profil" || pathname === "/contact")
     navItems = [...menuItemsArrayProfil];
@@ -52,7 +50,10 @@ export default function DrawerAppBar() {
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
-      sx={{ textAlign: "center", backgroundColor: "#20835D", height: "100%" }}
+      sx={{
+        textAlign: "center",
+        backgroundColor: "#20835D",
+      }}
     >
       <S.CloseIconStyle>
         <Typography variant="h5" color="" className="close">
@@ -63,22 +64,38 @@ export default function DrawerAppBar() {
       <Typography
         variant="h6"
         fontFamily='"Chicle", cursive'
+        fontSize="12vw"
         sx={{ my: 2, color: "#daca3bff" }}
       >
         Connectify
       </Typography>
       <Divider />
-      <List>
+      <List
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         {navItems.map((item) => (
           <ListItem key={item}>
             <ListItemButton
               selected={isSelected(item)}
               sx={{ textAlign: "center", color: "white" }}
             >
-              <ListItemText primary={item} onClick={() => navigate(item)} />
+              <ListItemText
+                primary={item}
+                onClick={() => navigate(item)}
+                primaryTypographyProps={{
+                  fontSize: "12vw",
+                  textTransform: "capitalize",
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
+        <S.Img src={qrcode} alt="Img1"></S.Img>
       </List>
     </Box>
   );
@@ -94,13 +111,15 @@ export default function DrawerAppBar() {
             boxShadow: "none",
           }}
         >
-          <Toolbar>
+          <Toolbar
+            sx={{ display: "flex", justifyContent: "end", width: "100%" }}
+          >
             <IconButton
               color="inherit"
               aria-label="open drawer"
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ display: { sm: "none" } }}
+              sx={{ display: { sm: "none", md: "none" } }}
             >
               <MenuIcon />
             </IconButton>
@@ -150,6 +169,7 @@ export default function DrawerAppBar() {
         </AppBar>
         <Box component="nav">
           <Drawer
+            anchor="right"
             variant="temporary"
             open={mobileOpen}
             onClose={handleDrawerToggle}

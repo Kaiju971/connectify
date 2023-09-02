@@ -21,7 +21,7 @@ export default function FormContact() {
         sx={{
           "& .MuiTextField-root": {
             m: 3,
-            width: "25vw",
+            width: { xs: "50vw", md: "25vw" },
             borderRadius: "10px",
           },
         }}
