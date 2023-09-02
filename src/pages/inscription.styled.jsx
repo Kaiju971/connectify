@@ -8,6 +8,13 @@ export const Container = styled("div")`
     margin: 0;
     padding: 0;
   }
+
+  @media (max-width: 750px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
 `;
 
 export const Item = styled("div")`
@@ -18,11 +25,20 @@ export const Item = styled("div")`
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
+
+  @media (max-width: 750px) {
+    width: 100vw;
+    height: 100%;
+  }
 `;
 
 export const Img = styled("img")`
   width: 50vw;
   height: 100vh;
+
+  @media (max-width: 750px) {
+    width: 100vw;
+  }
 `;
 
 export const FormContainer = styled("div")`
@@ -55,6 +71,10 @@ export const FlexContainer = styled("div")`
   background-color: #1d5a43;
   padding-top: 2rem;
   padding-bottom: 2rem;
+
+  @media (max-width: 750px) {
+    width: 80vw;
+  }
 `;
 
 export const FlexContainerPass = styled("div")`

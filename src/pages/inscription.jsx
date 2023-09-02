@@ -65,12 +65,12 @@ export default function Inscription() {
     <S.Container>
       <Box sx={{ width: "100%" }}>
         <Grid container rowSpacing={0} columnSpacing={0}>
-          <Grid xs={6}>
+          <Grid xs={12} md={6}>
             <S.Item>
               <S.Img src={fdinscription} />
             </S.Item>
           </Grid>
-          <Grid xs={6}>
+          <Grid xs={12} md={6}>
             <S.Item>
               <S.FormContainer>
                 <Typography
@@ -106,7 +106,7 @@ export default function Inscription() {
                         color="secondary"
                         sx={{
                           m: 1,
-                          width: "12vw",
+                          width: { xs: "24vw", md: "12vw" },
                           backgroundColor: " grey",
                           boxShadow: " 0px 8px 8px #566573  inset",
                         }}
@@ -122,7 +122,7 @@ export default function Inscription() {
                         color="secondary"
                         sx={{
                           m: 1,
-                          width: "12vw",
+                          width: { xs: "24vw", md: "12vw" },
                           backgroundColor: " grey",
                           boxShadow: " 0px 8px 8px #566573  inset",
                         }}
@@ -139,7 +139,7 @@ export default function Inscription() {
                       color="secondary"
                       sx={{
                         m: 1,
-                        width: "30vw",
+                        width: { xs: "50vw", md: "25vw" },
                         backgroundColor: " grey",
                         boxShadow: " 0px 8px 8px #566573  inset",
                       }}
@@ -211,10 +211,15 @@ export default function Inscription() {
                           display: "flex",
                           justifyContent: "start",
                           flexWrap: "wrap",
+                          width: { xs: "50vw", md: "25vw" },
                         }}
                       >
                         <FormControl
-                          sx={{ m: 1, width: "30vw", textAlign: "start" }}
+                          sx={{
+                            m: 1,
+                            textAlign: "start",
+                            width: { xs: "50vw", md: "25vw" },
+                          }}
                           variant="outlined"
                         >
                           <InputLabel
@@ -227,7 +232,7 @@ export default function Inscription() {
                             id="outlined-adornment-password"
                             type={showPassword ? "text" : "password"}
                             color="secondary"
-                            sx={{
+                            sx={{ borderRadius: "10px",
                               backgroundColor: " grey",
                               boxShadow: " 0px 8px 8px #566573  inset",
                             }}
@@ -255,7 +260,7 @@ export default function Inscription() {
                       </Box>
                       <Box sx={{ display: "flex", flexWrap: "wrap" }}>
                         <FormControl
-                          sx={{ m: 1, width: "30vw" }}
+                          sx={{ m: 1, width: { xs: "50vw", md: "25vw" } }}
                           variant="outlined"
                         >
                           <InputLabel
@@ -268,7 +273,7 @@ export default function Inscription() {
                             id="outlined-adornment-password"
                             type={showPassword ? "text" : "password"}
                             color="secondary"
-                            sx={{
+                            sx={{ borderRadius: "10px",
                               backgroundColor: " grey",
                               boxShadow: " 0px 8px 8px #566573  inset",
                             }}
@@ -300,7 +305,7 @@ export default function Inscription() {
                         m: 1,
                         backgroundColor: "#DACA3B",
                         boxShadow: " 0px 4px 4px #566573 ",
-                        width: "10vw",
+                        width: "20vw",
                         borderRadius: "10px",
                       }}
                     >

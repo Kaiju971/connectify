@@ -42,7 +42,7 @@ export const Container = styled("div")`
     text-align: center;
     padding-top: 13px;
     font-family: "Gravitas One", cursive;
-    /* color: yellow; */
+  
   }
 
   @media (max-width: 750px) {
