@@ -21,14 +21,6 @@ export default function Gallery({ hidden }) {
   const [searching, setSearching] = useState("");
   const [selected, setSelected] = useState(null);
 
-  // useEffect(() => {
-  //   const pictures = document.querySelectorAll(".picture");
-  //   pictures.forEach((item) => {
-  //     item.style.filter = "blur(4px)";
-  //     item.style.zIndex = "-1";
-  //   });
-  // }, []);
-
   const onInputChange = (event) => {
     setSearching(event.target.value);
   };

@@ -2,13 +2,6 @@ import * as React from "react";
 import Alert from "@mui/material/Alert";
 import { Snackbar as StyledSnackbar } from "@mui/material";
 
-// type SnackbarProps = {
-//   open: boolean,
-//   message: string,
-//   variant: "success" | "error" | "info" | undefined,
-//   onClose: () => void,
-// };
-
 const Snackbar = ({ open, onClose, message, variant }) => (
   <StyledSnackbar
     sx={{ height: "100%" }}

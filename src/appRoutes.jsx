@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 import Profil from "./pages/Profil";
 import Login from "./pages/screens/auth/Login";
 import NoPage from "./pages/noPage";
-import { setClientToken } from "./pages/Spotify";
+// import { setClientToken } from "./pages/Spotify";
 // import { useEffect } from "react";
 
 export default function AppRoutes() {

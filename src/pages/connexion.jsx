@@ -29,8 +29,6 @@ export default function Connexion() {
     event.preventDefault();
   };
 
-  // const { data, status } = useQuery("/users", UsersService.getAll);
-
   const userdataInitialState = {
     nom: "",
     prenom: "",
