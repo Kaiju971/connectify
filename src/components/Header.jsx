@@ -50,10 +50,7 @@ export default function DrawerAppBar() {
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
-      sx={{
-        textAlign: "center",
-        backgroundColor: "#20835D",
-      }}
+      sx={{ height: "100vh", textAlign: "center", backgroundColor: "#20835D" }}
     >
       <S.CloseIconStyle>
         <Typography variant="h5" color="" className="close">
