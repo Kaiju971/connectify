@@ -50,11 +50,16 @@ export default function Inscription() {
   const setUp = async () => {
     try {
       const data = await UsersService.createUser(user);
-
+      console.log(data);
       if (!data) {
         enqueueSnackbar("erreur", {
           variant: "error",
         });
+      } else {
+        enqueueSnackbar("Full success", {
+          variant: "success",
+        });
+        navigate("/Connexion");
       }
     } catch (error) {
       console.log(error);
