@@ -50,7 +50,7 @@ export default function Inscription() {
   const setUp = async () => {
     try {
       const data = await UsersService.createUser(user);
-      console.log(data);
+
       if (!data) {
         enqueueSnackbar("erreur", {
           variant: "error",
@@ -232,7 +232,8 @@ export default function Inscription() {
                             id="outlined-adornment-password"
                             type={showPassword ? "text" : "password"}
                             color="secondary"
-                            sx={{ borderRadius: "10px",
+                            sx={{
+                              borderRadius: "10px",
                               backgroundColor: " grey",
                               boxShadow: " 0px 8px 8px #566573  inset",
                             }}
@@ -273,7 +274,8 @@ export default function Inscription() {
                             id="outlined-adornment-password"
                             type={showPassword ? "text" : "password"}
                             color="secondary"
-                            sx={{ borderRadius: "10px",
+                            sx={{
+                              borderRadius: "10px",
                               backgroundColor: " grey",
                               boxShadow: " 0px 8px 8px #566573  inset",
                             }}
