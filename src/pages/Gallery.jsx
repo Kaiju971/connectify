@@ -2,7 +2,7 @@ import imgGroupe from "../image/imgGroupe.jpg";
 import albumDisco from "../image/albumDisco.jpg";
 import imgChignon from "../image/imgChignon.jpg";
 import fdqsnCopie from "../image/fdqsnCopie.jpg";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import * as S from "./Gallery.styled";
 import axios from "axios";
 import Grid from "@mui/material/Unstable_Grid2";
@@ -19,7 +19,6 @@ const images = [
 export default function Gallery({ hidden }) {
   const [photos, setPhotos] = useState([]);
   const [searching, setSearching] = useState("");
-  const [selected, setSelected] = useState(null);
 
   const onInputChange = (event) => {
     setSearching(event.target.value);
@@ -36,21 +35,43 @@ export default function Gallery({ hidden }) {
     }
   };
 
-  const handleImageMouseOver = (className) => {
-    const pictures = document.querySelectorAll(".picture");
-    pictures.forEach((item) => {
-      if (!item.classList.contains(className)) {
-        item.style.filter = "blur(4px)";
-        item.style.zIndex = "-1";
-      }
+  const increasePhoto = (index, api = false) => {
+    let clName = "";
+    if (!api) clName = `.item${index}`;
+    else clName = `.itemApi${index}`;
+    const pictures = document.querySelectorAll(`#pict`);
+    console.log(clName);
+    const pictArray = Array.from(pictures);
+    const picture = document.querySelector(clName);
+    pictArray.forEach((item) => {
+      item.style.zIndex = "1";
+      item.style.position = "relative";
+      if (item !== picture) item.style.filter = "blur(4px)";
+    });
+
+    const animation = picture?.animate([{ transform: "scale(2.5)" }], 1000);
+    picture.style.zIndex = "10000";
+    animation?.addEventListener("finish", () => {
+      picture.style.zIndex = "10000";
+      picture.style.transform = "scale(2.5)";
     });
   };
 
-  const handleImageMouseLeave = () => {
-    const pictures = document.querySelectorAll(".picture");
-    pictures.forEach((item) => {
-      item.style.filter = "blur(4px)";
-      item.style.zIndex = "-1";
+  const reducePhoto = (index, api = false) => {
+    let clName = "";
+    if (!api) clName = `.item${index}`;
+    else clName = `.itemApi${index}`;
+    const picture = document.querySelector(clName);
+    var animation = picture?.animate([{ transform: "scale(1)" }], 1000);
+    animation?.addEventListener("finish", () => {
+      picture.style.zIndex = "1";
+      picture.style.transform = "scale(1)";
+    });
+    const pictures = document.querySelectorAll(`#pict`);
+    const pictArray = Array.from(pictures);
+
+    pictArray.forEach((item) => {
+      if (item !== picture) item.style.filter = "blur(0px)";
     });
   };
 
@@ -71,11 +92,11 @@ export default function Gallery({ hidden }) {
           {images.map((image, index) => (
             <Grid xs={6}>
               <S.Img3
-                isSelected={selected}
                 src={image.src}
-                className="pict3 picture"
-                // onMouseOver={() => handleImageMouseOver(".pict1")}
-                // onMouseLeave={() => handleImageMouseLeave(".pict1")}
+                className={`item${index}`}
+                id="pict"
+                onMouseOver={() => increasePhoto(index)}
+                onMouseLeave={() => reducePhoto(index)}
               />
             </Grid>
           ))}
@@ -117,11 +138,10 @@ export default function Gallery({ hidden }) {
               alt={photo.photographer}
               width="100%"
               height="100%"
-              className={`pict${index + 1} picture`}
-              isSelected={selected === index + images.length}
-              // onClick={() =>
-              //   handleImageClick(index + images.length, `pict${index + 1}`)
-              // }
+              className={`itemApi${index}`}
+              id="pict"
+              onMouseOver={() => increasePhoto(index, true)}
+              onMouseLeave={() => reducePhoto(index, true)}
             />
           </S.ListItem>
         ))}

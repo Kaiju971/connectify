@@ -24,106 +24,18 @@ export const Box = styled("div")`
   margin-right: 33rem;
 `;
 
-export const Img = styled("img")(
-  ({ isSelected }) => `
+export const Img = styled("img")`
   width: 100%;
   margin-right: 33rem;
-    transition: filter 0.3s ease-in-out;
-  z-index: ${({ isSelected }) => (isSelected ? "10" : "-1")};
-  filter: ${({ isSelected }) => (isSelected ? "none" : "blur(4px)")};
+  transition: filter 0.3s ease-in-out;
+`;
 
-  &:hover {
-    -webkit-animation: scale-up-right 0.4s cubic-bezier(0.6, 0.04, 0.98, 0.335)
-      both;
-    animation: scale-up-right 0.4s cubic-bezier(0.6, 0.04, 0.98, 0.335) both;
-
-    /**
- * ----------------------------------------
- * animation scale-up-right
- * ----------------------------------------
- */
-    @-webkit-keyframes scale-up-right {
-      0% {
-        -webkit-transform: scale(0.5);
-        transform: scale(0.5);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-      }
-      100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-      }
-    }
-    @keyframes scale-up-right {
-      0% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;;
-      }
-      100% {
-        -webkit-transform: scale(2);
-        transform: scale(2);
-        -webkit-transform-origin: 100% 0%;
-        transform-origin: 100% 0%;;
-      }
-    }
-  }
-`
-);
-
-export const Img3 = styled("img")(
-  ({ isSelected }) => `
+export const Img3 = styled("img")`
   width: 100%;
   height: 36.2vh;
   margin-right: 33rem;
-    transition: filter 0.3s ease-in-out;
-  z-index: ${({ isSelected }) => (isSelected ? "10" : "-1")};
-  filter: ${({ isSelected }) => (isSelected ? "none" : "blur(4px)")};
-  
-    &:hover {
-    -webkit-animation: scale-up-right 0.4s cubic-bezier(0.6, 0.04, 0.98, 0.335)
-      both;
-    animation: scale-up-right 0.4s cubic-bezier(0.6, 0.04, 0.98, 0.335) both;
-
-    /**
- * ----------------------------------------
- * animation scale-up-right
- * ----------------------------------------
- */
-    @-webkit-keyframes scale-up-right {
-      0% {
-        -webkit-transform: scale(0.5);
-        transform: scale(0.5);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-      }
-      100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-      }
-    }
-    @keyframes scale-up-right {
-      0% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-      }
-      100% {
-        -webkit-transform: scale(2);
-        transform: scale(2);
-        -webkit-transform-origin: 0% 100%;
-        transform-origin: 0% 100%;
-      }
-    }
-  }
-`
-);
+  transition: filter 0.3s ease-in-out;
+`;
 
 export const PhotoBox = styled("div")`
   display: grid;
