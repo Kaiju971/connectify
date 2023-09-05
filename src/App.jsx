@@ -72,9 +72,6 @@ function App() {
                     width: 0px;
                   }
                 }
-                /* #root {
-            position: relative;
-          } */
               `}
             />
           </SnackbarProvider>

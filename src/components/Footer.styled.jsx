@@ -12,5 +12,4 @@ export const Container = styled("div")`
 export const Img = styled("img")`
   width: 5vw;
   height: 100%;
-  /* padding-right: 70vw; */
 `;

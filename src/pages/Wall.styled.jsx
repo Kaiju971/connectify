@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled("div")`
   width: 100%;
-  /* height: 100vh; */
   font-family: "Alkatra", cursive;
 
   .title {
@@ -25,7 +24,6 @@ export const Container = styled("div")`
 
 export const GridCadre = styled("div")`
   width: 80%;
-  /* height: 100vh; */
   font-family: "Alkatra", cursive;
   background-color: #d9d9d9;
   display: flex;
@@ -33,7 +31,7 @@ export const GridCadre = styled("div")`
   flex-direction: column;
   justify-content: space-between;
   padding-top: 4vh;
-  /* padding-bottom: 4vh; */
+
 `;
 
 export const GridImg = styled("div")`
@@ -54,7 +52,6 @@ export const GridImg = styled("div")`
 
 export const Img = styled("img")`
   width: 80%;
-  /* height: 100vh; */
   font-family: "Alkatra", cursive;
   grid-column: 1;
   grid-row: 1;
