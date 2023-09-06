@@ -59,6 +59,7 @@ export default function DrawerAppBar() {
         <CloseIcon sx={{ fontSize: "2rem" }} />
       </S.CloseIconStyle>
       <Typography
+        onClick={() => navigate("accueil")}
         variant="h6"
         fontFamily='"Chicle", cursive'
         fontSize="12vw"
